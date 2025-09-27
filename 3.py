@@ -28,16 +28,16 @@ def enviar_comando(comando):
     time.sleep(0.1)
 
 def generar_comandos(nombre, lineas, props):
-    cmds = [f"/hologram create text {nombre}"]
-    cmds.append(f"/hologram edit {nombre} setline 1 {lineas[0]}")
+    cmds = [f"/fancyholograms:hologram create text {nombre}"]
+    cmds.append(f"/fancyholograms:hologram edit {nombre} setline 1 {lineas[0]}")
     for i, linea in enumerate(lineas[1:], start=2):
-        cmds.append(f"/hologram edit {nombre} addline {linea}")
-    cmds.append(f"/hologram edit {nombre} scale {props['scale']}")
-    cmds.append(f"/hologram edit {nombre} background {props['background']}")
-    cmds.append(f"/hologram edit {nombre} textshadow {props['textshadow']}")
-    cmds.append(f"/hologram edit {nombre} billboard {props['billboard']}")
-    cmds.append(f"/hologram edit {nombre} rotatepitch {props['rotatepitch']}")
-    cmds.append(f"/hologram edit {nombre} visibility {props['visibility']}")
+        cmds.append(f"/fancyholograms:hologram edit  {nombre} addline {linea}")
+    cmds.append(f"/fancyholograms:hologram edit  {nombre} scale {props['scale']}")
+    cmds.append(f"/fancyholograms:hologram edit {nombre} background {props['background']}")
+    cmds.append(f"/fancyholograms:hologram edit  {nombre} textshadow {props['textshadow']}")
+    cmds.append(f"/fancyholograms:hologram edit {nombre} billboard {props['billboard']}")
+    cmds.append(f"/fancyholograms:hologram edit {nombre} rotatepitch {props['rotatepitch']}")
+    cmds.append(f"/fancyholograms:hologram edit {nombre} visibility {props['visibility']}")
     return cmds
 
 def crear_holograma(nombre, props):
